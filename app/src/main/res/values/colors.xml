@@ -10,5 +10,7 @@
     <color name="background">#FCF8F4</color>
     <color name="button_default">#264B34</color>
     <color name="text">#25332A</color>
+    <color name="green">#8AB77E</color>
+
 
 </resources>
