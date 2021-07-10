@@ -1,21 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.getStarted.BlankFragment">
+    android:background="#f4f4f4"
+    android:gravity="center"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-
+    <TextView
+        android:id="@+id/permission_description_tv"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:textAlignment="center"
+        android:text="@string/permission_description" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:id="@+id/enable_btn"
+        android:layout_width="300dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#fff"
+        android:background="@drawable/rounded_corner_button"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        android:text="Enable Usage Stats Permission" />
+
+    <Button
+        android:id="@+id/show_btn"
+        android:visibility="gone"
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:textColor="#fff"
+        android:background="@drawable/rounded_corner_button"
+        android:layout_height="wrap_content"
+        android:text="Show My Apps Usage" />
+
+    <TextView
+        android:id="@+id/usage_tv"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:padding="20dp"
+        android:text="Your Apps Usage For Last 24 Hours" />
+
+    <ListView
+        android:visibility="gone"
+        android:id="@+id/apps_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

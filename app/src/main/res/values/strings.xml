@@ -7,4 +7,5 @@
     <string name="home_slogan">stick to your limit and earn leaves</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="permission_description">In order to allow this application to collect your apps usage information, you need to allow "Package Usage Stats" permission from the Settings application.\nYou can cancel this permission anytime.</string>
 </resources>
