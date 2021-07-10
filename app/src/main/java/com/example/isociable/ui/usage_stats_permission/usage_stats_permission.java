@@ -1,7 +1,6 @@
-package com.example.isociable.ui.getStarted;
+package com.example.isociable.ui.usage_stats_permission;
 
 import android.app.AppOpsManager;
-import android.app.usage.UsageStatsManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -12,7 +11,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 
 import android.provider.Settings;
 import android.util.Log;
@@ -28,12 +26,12 @@ import static android.app.AppOpsManager.MODE_ALLOWED;
 import static android.app.AppOpsManager.OPSTR_GET_USAGE_STATS;
 
 
-public class BlankFragment extends Fragment {
+public class usage_stats_permission extends Fragment {
     Button enableBtn, showBtn;
     TextView permissionDescriptionTv, usageTv;
 
 
-    public BlankFragment() {
+    public usage_stats_permission() {
         // Required empty public constructor
     }
 
@@ -52,7 +50,7 @@ public class BlankFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_blank, container, false);
        // final NavController navController = Navigation.findNavController(view);
-        enableBtn = view.findViewById(R.id.enable_btn);
+        enableBtn = view.findViewById(R.id.confirmButton);
         showBtn =  view.findViewById(R.id.show_btn);
         permissionDescriptionTv =view.findViewById(R.id.permission_description_tv);
 

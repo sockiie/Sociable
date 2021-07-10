@@ -35,4 +35,16 @@
 
 
     </style>
+
+
+    <style name="MyTimePickerStyle" parent="@style/ThemeOverlay.AppCompat.Dialog.Alert">
+        <item name="android:textColorPrimary">#ffffff</item>
+        <item name="android:textColorSecondary">#ffffff</item>
+        <item name="android:background">@drawable/custom_time_picker
+
+        </item>
+
+
+
+    </style>
 </resources>

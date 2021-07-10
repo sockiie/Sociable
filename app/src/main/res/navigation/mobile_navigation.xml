@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/blankFragment2">
+    app:startDestination="@id/timepicker2">
 
     <fragment
         android:id="@+id/navigation_home"
@@ -24,11 +24,19 @@
         tools:layout="@layout/fragment_notifications" />
     <fragment
         android:id="@+id/blankFragment2"
-        android:name="com.example.isociable.ui.getStarted.BlankFragment"
+        android:name="com.example.isociable.ui.usage_stats_permission.usage_stats_permission"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" >
         <action
             android:id="@+id/action_blankFragment2_to_navigation_home"
             app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/timepicker2"
+        android:name="com.example.isociable.ui.timepicker.timepicker"
+        android:label="timepicker" >
+        <action
+            android:id="@+id/action_timepicker2_to_blankFragment2"
+            app:destination="@id/blankFragment2" />
     </fragment>
 </navigation>

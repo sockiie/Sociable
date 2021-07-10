@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
             @Override
             public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
-               if(destination.getId()==R.id.blankFragment2) {
+               if(destination.getId()==R.id.blankFragment2 || destination.getId()==R.id.timepicker2) {
                    //navView.setAlpha(0);
                    navView.setVisibility(View.INVISIBLE);
                }else {//navView.setAlpha(1);
