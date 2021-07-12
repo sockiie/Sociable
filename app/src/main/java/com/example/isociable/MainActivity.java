@@ -45,6 +45,3 @@ public class MainActivity extends AppCompatActivity {
 }
 
 
-
-//Hallo Hallo Test 123
-//Test 2
