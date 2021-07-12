@@ -1,12 +1,14 @@
 package com.example.isociable;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
@@ -14,6 +16,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +35,12 @@ public class MainActivity extends AppCompatActivity {
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
             @Override
             public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
-               if(destination.getId()==R.id.blankFragment2) {
-                   navView.setAlpha(0);
-               }else {navView.setAlpha(1);}
+               if(destination.getId()==R.id.blankFragment2 || destination.getId()==R.id.timepicker2) {
+                   //navView.setAlpha(0);
+                   navView.setVisibility(View.INVISIBLE);
+               }else {//navView.setAlpha(1);
+                   navView.setVisibility(View.VISIBLE);
+               }
             }
         });
 
