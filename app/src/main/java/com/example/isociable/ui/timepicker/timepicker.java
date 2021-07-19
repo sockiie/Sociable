@@ -42,9 +42,10 @@ public class timepicker extends Fragment {
     ToggleButton toggleButtoninsta,toggleButtonface,toggleButtonsnap;
     ImageButton instagram,facebook,snapchat;
     SharedPreferences sp;
-    int t1hour,t1minute;
+    int t1hour,t1minute,coinapppicks,cointimepicker;
     Boolean timeChanged = false;
     timepickerViewModel timepickerViewModel;
+
 
     public timepicker() {
         // Required empty public constructor
@@ -102,6 +103,7 @@ public class timepicker extends Fragment {
                 editor.commit();
                 String mindAndSex = "You selected timelimit is "+hourOfDay + ":" + minute+" hours";
                 textView.setText(mindAndSex);
+                cointimepicker = 240/(hourOfDay+1) + 20/(minute+1);
             }
 
         });
@@ -112,6 +114,7 @@ public class timepicker extends Fragment {
                     @Override
                     public void onChanged(Boolean aBoolean) {
                         if(aBoolean==true) {
+                            coinapppicks = coinapppicks + 5;
                             confirmButton.setEnabled(true);
                             confirmButton.setAlpha(1);
                         }
@@ -122,7 +125,9 @@ public class timepicker extends Fragment {
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putBoolean("Instagram",true);
                 editor.commit();
-                Toast.makeText(getActivity(),"Instagram selected",Toast.LENGTH_LONG).show(); }
+                Toast.makeText(getActivity(),"Instagram selected",Toast.LENGTH_LONG).show();
+
+            }
 
             else{
 
@@ -135,19 +140,28 @@ public class timepicker extends Fragment {
                 editor.putBoolean("Instagram",false);
                 editor.commit();
                 Toast.makeText(getActivity(),"Instagram deselected",Toast.LENGTH_LONG).show();
-
+               ;
 
             }
         });
         toggleButtonsnap.setOnClickListener((v) -> {
             if(toggleButtonsnap.isChecked()){
-
+                timepickerViewModel.settappchoosen().observe(getViewLifecycleOwner(), new Observer<Boolean>() {
+                    @Override
+                    public void onChanged(Boolean aBoolean) {
+                        if(aBoolean==true) {
+                            confirmButton.setEnabled(true);
+                            confirmButton.setAlpha(1);
+                            coinapppicks = coinapppicks + 5;
+                        }
+                    }
+                });
                 toggleButtonsnap.setAlpha(1);
                 SharedPreferences sp = getActivity().getApplicationContext().getSharedPreferences("selectedApps",Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putBoolean("Snapchat",true);
                 editor.commit();
-                Toast.makeText(getActivity(),"Snapchat selected",Toast.LENGTH_LONG).show(); }
+                Toast.makeText(getActivity(),"Snapchat selected",Toast.LENGTH_LONG).show();}
 
             else{
 
@@ -160,20 +174,31 @@ public class timepicker extends Fragment {
                 editor.putBoolean("Snapchat",false);
                 editor.commit();
                 Toast.makeText(getActivity(),"Snapchat deselected",Toast.LENGTH_LONG).show();
+      ;
 
 
             }
         });
         toggleButtonface.setOnClickListener((v) -> {
             if(toggleButtonface.isChecked()){
-
+                timepickerViewModel.settappchoosen().observe(getViewLifecycleOwner(), new Observer<Boolean>() {
+                    @Override
+                    public void onChanged(Boolean aBoolean) {
+                        if(aBoolean==true) {
+                            confirmButton.setEnabled(true);
+                            confirmButton.setAlpha(1);
+                            coinapppicks = coinapppicks + 5;
+                        }
+                    }
+                });
                 toggleButtonface.setAlpha(1);
 
                 SharedPreferences sp = getActivity().getApplicationContext().getSharedPreferences("selectedApps",Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putBoolean("Facebook",true);
                 editor.commit();
-                Toast.makeText(getActivity(),"Facebook selected",Toast.LENGTH_LONG).show(); }
+                Toast.makeText(getActivity(),"Facebook selected",Toast.LENGTH_LONG).show();
+             ;}
 
             else{
 
@@ -186,7 +211,7 @@ public class timepicker extends Fragment {
                 editor.putBoolean("Facebook",false);
                 editor.commit();
                 Toast.makeText(getActivity(),"Facebook deselected",Toast.LENGTH_LONG).show();
-
+          ;
 
             }
         });
@@ -201,12 +226,20 @@ public class timepicker extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         final NavController navController = Navigation.findNavController(view);
-        if(timeChanged==true) {
+        if(timeChanged) {
             confirmButton.setEnabled(true);
         }
         Button button = view.findViewById(R.id.confirmButton);
         button.setOnClickListener((v) -> {
+            sp = getActivity().getApplicationContext().getSharedPreferences("coinformel",Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putInt("extracoins", 0);
+            editor.commit();
+            int coins = sp.getInt("extracoins",0) + coinapppicks + cointimepicker;
 
+            editor.putInt("extracoins", coins);
+            editor.commit();
+            coinapppicks =- coinapppicks;
             navController.navigate(R.id.action_timepicker2_to_blankFragment2);
 
         });

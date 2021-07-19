@@ -9,19 +9,17 @@
         android:id="@+id/navigation_home"
         android:name="com.example.isociable.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_bottomSheetFragment"
+            app:destination="@id/bottomSheetFragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.isociable.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.isociable.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_shopnew"
+        android:name="com.example.isociable.ui.notifications.ShopFragment"
+        android:label="@string/title_profil"
+        tools:layout="@layout/fragment_shop" />
     <fragment
         android:id="@+id/blankFragment2"
         android:name="com.example.isociable.ui.usage_stats_permission.usage_stats_permission"
@@ -39,4 +37,28 @@
             android:id="@+id/action_timepicker2_to_blankFragment2"
             app:destination="@id/blankFragment2" />
     </fragment>
+    <fragment
+        android:id="@+id/navigation_dashboardFragment3"
+        android:name="com.example.isociable.ui.dashboard.DashboardFragment"
+        android:label="DashboardFragment" />
+    <dialog
+        android:id="@+id/bottomSheetFragment"
+        android:name="com.example.isociable.BottomSheetFragment"
+        android:label="fragment_bottom_sheet"
+        tools:layout="@layout/fragment_bottom_sheet" >
+        <action
+            android:id="@+id/action_bottomSheetFragment_to_navigation_dashboardFragment3"
+            app:destination="@id/navigation_dashboardFragment3" />
+        <action
+            android:id="@+id/action_bottomSheetFragment_to_timepicker2"
+            app:destination="@id/timepicker2" />
+        <action
+            android:id="@+id/action_bottomSheetFragment_to_coreconcept2"
+            app:destination="@id/coreconcept2" />
+    </dialog>
+    <fragment
+        android:id="@+id/coreconcept2"
+        android:name="com.example.isociable.coreconcept"
+        android:label="fragment_coreconcept"
+        tools:layout="@layout/fragment_coreconcept" />
 </navigation>

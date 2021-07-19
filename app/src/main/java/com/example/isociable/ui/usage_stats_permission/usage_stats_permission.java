@@ -3,6 +3,7 @@ package com.example.isociable.ui.usage_stats_permission;
 import android.app.AppOpsManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
@@ -28,7 +29,8 @@ import static android.app.AppOpsManager.OPSTR_GET_USAGE_STATS;
 
 public class usage_stats_permission extends Fragment {
     Button enableBtn, showBtn;
-    TextView permissionDescriptionTv, usageTv;
+    TextView permissionDescriptionTv, coins;
+    SharedPreferences sp;
 
 
     public usage_stats_permission() {
@@ -53,7 +55,11 @@ public class usage_stats_permission extends Fragment {
         enableBtn = view.findViewById(R.id.confirmButton);
         showBtn =  view.findViewById(R.id.show_btn);
         permissionDescriptionTv =view.findViewById(R.id.permission_description_tv);
+        coins = view.findViewById(R.id.amountcoins);
 
+
+        sp = getActivity().getApplicationContext().getSharedPreferences("coinformel",Context.MODE_PRIVATE);
+        coins.setText("You get " + sp.getInt("extracoins",0) + " Coins");
   /*      if (getGrantStatus()) {
             Log.d("STATE", "test2");
             showHideWithPermission();
@@ -122,6 +128,7 @@ public class usage_stats_permission extends Fragment {
         enableBtn.setVisibility(View.VISIBLE);
         permissionDescriptionTv.setVisibility(View.VISIBLE);
         showBtn.setVisibility(View.GONE);
+        coins.setVisibility(View.GONE);
 //        usageTv.setVisibility(View.GONE);
         //appsList.setVisibility(View.GONE);
 
@@ -130,6 +137,7 @@ public class usage_stats_permission extends Fragment {
         enableBtn.setVisibility(View.GONE);
         permissionDescriptionTv.setVisibility(View.GONE);
         showBtn.setVisibility(View.VISIBLE);
+        coins.setVisibility(View.VISIBLE);
         //usageTv.setVisibility(View.GONE);
        // appsList.setVisibility(View.GONE);
     }

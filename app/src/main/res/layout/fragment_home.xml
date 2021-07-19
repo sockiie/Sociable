@@ -19,12 +19,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/mewsreaderbold"
         android:text="@string/hello_nature_lover"
         android:textAlignment="center"
         android:textColor="@color/text"
         android:textSize="35sp"
+        android:elevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,6 +42,7 @@
         android:fontFamily="@font/barlowregular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:elevation="8dp"
         app:layout_constraintTop_toBottomOf="@+id/text_home" />
 
     <TextView
@@ -49,6 +52,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginBottom="8dp"
         android:text="Time Limit:"
+        android:elevation="8dp"
         app:layout_constraintBottom_toTopOf="@+id/determinateBar"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -56,12 +60,13 @@
         android:id="@+id/usage_duration_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:elevation="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="8dp"
         android:text="3h"
         app:layout_constraintBottom_toTopOf="@+id/determinateBar"
         app:layout_constraintStart_toEndOf="@+id/app_name_tv" />
+
     <ProgressBar
         android:id="@+id/determinateBar"
         style="@android:style/Widget.ProgressBar.Horizontal"
@@ -86,6 +91,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:text="0:30 left"
+        android:elevation="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/determinateBar" />
     <ImageButton
@@ -104,27 +110,32 @@
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="80dp"
         android:scaleType="centerCrop"
         android:src="@drawable/gruppe_2958"
-        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/determinateBar" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
+    <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="80dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pfad_3725" />
+
+    <TextView
+        android:id="@+id/coins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

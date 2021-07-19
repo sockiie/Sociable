@@ -1,14 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">iSociable</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_shop">Shop</string>
+    <string name="title_profil">Profil</string>
     <string name="hello_nature_lover">HELLO <br>NATURE-LOVER</br></string>
     <string name="home_slogan">stick to your limit and earn leaves</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="permission_description">In order to allow this application to collect your apps usage information, you need to allow "Package Usage Stats" permission from the Settings application.\nYou can cancel this permission anytime.</string>
-    <string name="headlinetimepicker">Lets Start!<br>1</br></string>
     <string name="timepickerdescription">please select the maximum amount of time for your social media usage per day</string>
     <string name="title_profile">Profile</string>
     <string name="profile_username">Emilia</string>

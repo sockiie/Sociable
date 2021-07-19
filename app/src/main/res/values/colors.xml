@@ -11,6 +11,9 @@
     <color name="button_default">#264B34</color>
     <color name="text">#25332A</color>
     <color name="green">#8AB77E</color>
+    <color name="red">#FE1047</color>
+    <color name="yellow">#9B731F</color>
+
 
 
 </resources>
